@@ -1,4 +1,10 @@
-import { awscdk, javascript, TaskStep } from 'projen';
+import { awscdk, javascript, TaskStep, TextFile } from 'projen';
+import { JobPermission } from 'projen/lib/github/workflows-model';
+
+const nodejsVersion = '18';
+
+// const runners = ['kaas', 'self-hosted'];
+
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Elisa SRE',
   authorAddress: '',
@@ -15,6 +21,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   licensed: false,
   releaseToNpm: false,
   projenrcTs: true,
+  workflowNodeVersion: nodejsVersion,
+  // workflowRunsOn: runners,
 });
 
 const integrationTestSteps: TaskStep[] = [
@@ -28,8 +36,54 @@ const integrationTestSteps: TaskStep[] = [
   },
 ];
 
-project.addTask('integration-test', {
+project.addTask('integrationtest', {
+  description: 'Runs integration tests',
   steps: integrationTestSteps,
+});
+
+
+project.buildWorkflow?.addPostBuildJob('integrationtest', {
+  tools: {
+    node: {
+      version: nodejsVersion,
+    },
+  },
+  permissions: {
+    contents: JobPermission.READ,
+    idToken: JobPermission.WRITE,
+  },
+  runsOn: ['ubuntu-latest'],
+  steps: [
+    {
+      name: 'Checkout',
+      uses: 'actions/checkout@v3',
+      with: {
+        ref: '${{ github.event.pull_request.head.ref }}',
+        repository: '${{ github.event.pull_request.head.repo.full_name }}',
+      },
+    },
+    {
+      name: 'Install dependencies',
+      run: 'npm install',
+    },
+    {
+      name: 'Configure AWS credentials',
+      uses: 'aws-actions/configure-aws-credentials@v1',
+      with: {
+        'role-to-assume': 'arn:aws:iam::762212084818:role/cdk-constructs-test-role',
+        'role-session-name': 'cdk-constructs-test',
+        'aws-region': 'eu-central-1',
+      },
+    },
+    {
+      name: 'Run integration tests',
+      run: 'npx projen integrationtest',
+    },
+  ],
+});
+
+new TextFile(project, '.nvmrc', {
+  lines: [nodejsVersion],
 });
 
 project.synth();

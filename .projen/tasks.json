@@ -130,6 +130,20 @@
         }
       ]
     },
+    "integrationtest": {
+      "name": "integrationtest",
+      "description": "Runs integration tests",
+      "steps": [
+        {
+          "name": "tsc",
+          "exec": "tsc --build tsconfig.dev.json"
+        },
+        {
+          "name": "integration-test",
+          "exec": "integ-runner --parallel-regions=eu-central-1"
+        }
+      ]
+    },
     "package": {
       "name": "package",
       "description": "Creates the distribution package",
