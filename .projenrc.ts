@@ -1,4 +1,4 @@
-const { awscdk, javascript } = require('projen');
+import { awscdk, javascript, TaskStep } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Elisa SRE',
   authorAddress: '',
@@ -14,9 +14,10 @@ const project = new awscdk.AwsCdkConstructLibrary({
   gitignore: ['src/**/*.js', 'test/**/*.js', '**/*d.ts'],
   licensed: false,
   releaseToNpm: false,
+  projenrcTs: true,
 });
 
-const integrationTestSteps = [
+const integrationTestSteps: TaskStep[] = [
   {
     name: 'tsc',
     exec: `tsc --build ${project.tsconfigDev.fileName}`,
@@ -26,7 +27,6 @@ const integrationTestSteps = [
     exec: 'integ-runner --parallel-regions=eu-central-1',
   },
 ];
-
 
 project.addTask('integration-test', {
   steps: integrationTestSteps,
