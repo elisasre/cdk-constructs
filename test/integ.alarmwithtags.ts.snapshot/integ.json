@@ -5,6 +5,7 @@
       "stacks": [
         "IntegrationTestStack"
       ],
+      "diffAssets": true,
       "assertionStack": "TestAlarmTags/DefaultTest/DeployAssert",
       "assertionStackName": "TestAlarmTagsDefaultTestDeployAssert4A48BEAE"
     }

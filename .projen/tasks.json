@@ -135,12 +135,14 @@
       "description": "Runs integration tests",
       "steps": [
         {
-          "name": "tsc",
-          "exec": "tsc --build tsconfig.dev.json"
+          "exec": "ts-node --project tsconfig.dev.json .projenrc.ts"
+        },
+        {
+          "exec": "jsii --silence-warnings=reserved-word"
         },
         {
           "name": "integration-test",
-          "exec": "integ-runner --parallel-regions=eu-central-1"
+          "exec": "integ-runner --app=\"ts-node {filePath}\" --test-regex=\"test/integ.[a-z-_]+.ts$\" --parallel-regions=eu-central-1 --update-on-failed"
         }
       ]
     },

@@ -19,7 +19,10 @@ new AlarmWithTags(stack, 'AlarmWithTagsConstruct', {
   },
 });
 
-const integ = new IntegTest(app, 'TestAlarmTags', { testCases: [stack] });
+const integ = new IntegTest(app, 'TestAlarmTags', {
+  testCases: [stack],
+  diffAssets: true,
+});
 
 const tags = integ.assertions.awsApiCall('CloudWatch', 'listTagsForResource', {
   ResourceARN: 'arn:aws:cloudwatch:eu-central-1:762212084818:alarm:TestAlarmForIntegrationTests',

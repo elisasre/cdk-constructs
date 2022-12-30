@@ -17,7 +17,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   description: 'Constructs for AWS CDK',
   devDeps: ['esbuild', '@aws-cdk/integ-tests-alpha', '@aws-cdk/integ-runner', '@types/cfn-response', '@types/aws-lambda'],
   packageName: 'cdk-constructs',
-  gitignore: ['src/**/*.js', 'test/**/*.js', '**/*d.ts'],
+  gitignore: ['test/cdk-integ.out*'],
   licensed: false,
   releaseToNpm: false,
   projenrcTs: true,
@@ -25,22 +25,30 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // workflowRunsOn: runners,
 });
 
+
 const integrationTestSteps: TaskStep[] = [
   {
-    name: 'tsc',
-    exec: `tsc --build ${project.tsconfigDev.fileName}`,
-  },
-  {
     name: 'integration-test',
-    exec: 'integ-runner --parallel-regions=eu-central-1',
+    exec: [
+      'integ-runner',
+      '--app="ts-node {filePath}"',
+      '--test-regex="test/integ\.[a-z-_]+.ts$"',
+      '--parallel-regions=eu-central-1',
+      '--update-on-failed',
+    ].join(' '),
   },
 ];
 
+const integrationTestPreSteps = ['default', 'compile']
+  .map((taskName) => project.tasks.tryFind(taskName))
+  .filter(task => task !== undefined)
+  .reduce((acc, task) => [...acc, ...task?.steps ?? []], [] as TaskStep[]);
+
+
 project.addTask('integrationtest', {
   description: 'Runs integration tests',
-  steps: integrationTestSteps,
+  steps: [...integrationTestPreSteps, ...integrationTestSteps],
 });
-
 
 project.buildWorkflow?.addPostBuildJob('integrationtest', {
   tools: {

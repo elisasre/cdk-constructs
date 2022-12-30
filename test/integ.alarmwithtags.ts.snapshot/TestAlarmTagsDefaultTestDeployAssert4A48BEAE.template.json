@@ -16,7 +16,7 @@
      "ResourceARN": "arn:aws:cloudwatch:eu-central-1:762212084818:alarm:TestAlarmForIntegrationTests"
     },
     "flattenResponse": "false",
-    "salt": "1672233198440"
+    "salt": "1672411852732"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
