@@ -7,6 +7,8 @@ const nodejsVersion = '18';
 
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Elisa SRE',
+  keywords: ['aws', 'cdk', 'constructs'],
+  depsUpgrade: false,
   authorAddress: '',
   cdkVersion: '2.57.0',
   defaultReleaseBranch: 'main',
@@ -18,6 +20,10 @@ const project = new awscdk.AwsCdkConstructLibrary({
   devDeps: ['esbuild', '@aws-cdk/integ-tests-alpha', '@aws-cdk/integ-runner', '@types/cfn-response', '@types/aws-lambda'],
   packageName: 'cdk-constructs',
   gitignore: ['test/cdk-integ.out*'],
+  githubOptions: {
+    mergify: false,
+  },
+  dependabot: true,
   licensed: false,
   releaseToNpm: false,
   projenrcTs: true,
