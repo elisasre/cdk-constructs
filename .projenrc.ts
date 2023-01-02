@@ -27,6 +27,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   licensed: false,
   releaseToNpm: false,
   projenrcTs: true,
+  npmRegistryUrl: 'https://npm.pkg.github.com',
   workflowNodeVersion: nodejsVersion,
   // workflowRunsOn: runners,
 });
