@@ -2,39 +2,39 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### AlarmWithTags <a name="AlarmWithTags" id="cdk-constructs.AlarmWithTags"></a>
+### AlarmWithTags <a name="AlarmWithTags" id="@elisasre/cdk-constructs.AlarmWithTags"></a>
 
-#### Initializers <a name="Initializers" id="cdk-constructs.AlarmWithTags.Initializer"></a>
+#### Initializers <a name="Initializers" id="@elisasre/cdk-constructs.AlarmWithTags.Initializer"></a>
 
 ```typescript
-import { AlarmWithTags } from 'cdk-constructs'
+import { AlarmWithTags } from '@elisasre/cdk-constructs'
 
 new AlarmWithTags(scope: Construct, id: string, props: AlarmWithTagsProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-constructs.AlarmWithTags.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#cdk-constructs.AlarmWithTags.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-constructs.AlarmWithTags.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-constructs.AlarmWithTagsProps">AlarmWithTagsProps</a></code> | *No description.* |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.props">props</a></code> | <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps">AlarmWithTagsProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="cdk-constructs.AlarmWithTags.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="cdk-constructs.AlarmWithTags.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="cdk-constructs.AlarmWithTags.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#cdk-constructs.AlarmWithTagsProps">AlarmWithTagsProps</a>
+- *Type:* <a href="#@elisasre/cdk-constructs.AlarmWithTagsProps">AlarmWithTagsProps</a>
 
 ---
 
@@ -42,17 +42,17 @@ new AlarmWithTags(scope: Construct, id: string, props: AlarmWithTagsProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdk-constructs.AlarmWithTags.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-constructs.AlarmWithTags.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
-| <code><a href="#cdk-constructs.AlarmWithTags.addAlarmAction">addAlarmAction</a></code> | Trigger this action if the alarm fires. |
-| <code><a href="#cdk-constructs.AlarmWithTags.addInsufficientDataAction">addInsufficientDataAction</a></code> | Trigger this action if there is insufficient data to evaluate the alarm. |
-| <code><a href="#cdk-constructs.AlarmWithTags.addOkAction">addOkAction</a></code> | Trigger this action if the alarm returns from breaching state into ok state. |
-| <code><a href="#cdk-constructs.AlarmWithTags.renderAlarmRule">renderAlarmRule</a></code> | AlarmRule indicating ALARM state for Alarm. |
-| <code><a href="#cdk-constructs.AlarmWithTags.toAnnotation">toAnnotation</a></code> | Turn this alarm into a horizontal annotation. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.addAlarmAction">addAlarmAction</a></code> | Trigger this action if the alarm fires. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.addInsufficientDataAction">addInsufficientDataAction</a></code> | Trigger this action if there is insufficient data to evaluate the alarm. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.addOkAction">addOkAction</a></code> | Trigger this action if the alarm returns from breaching state into ok state. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.renderAlarmRule">renderAlarmRule</a></code> | AlarmRule indicating ALARM state for Alarm. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.toAnnotation">toAnnotation</a></code> | Turn this alarm into a horizontal annotation. |
 
 ---
 
-##### `toString` <a name="toString" id="cdk-constructs.AlarmWithTags.toString"></a>
+##### `toString` <a name="toString" id="@elisasre/cdk-constructs.AlarmWithTags.toString"></a>
 
 ```typescript
 public toString(): string
@@ -60,7 +60,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="cdk-constructs.AlarmWithTags.applyRemovalPolicy"></a>
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@elisasre/cdk-constructs.AlarmWithTags.applyRemovalPolicy"></a>
 
 ```typescript
 public applyRemovalPolicy(policy: RemovalPolicy): void
@@ -76,13 +76,13 @@ to be replaced.
 The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
 account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
 
-###### `policy`<sup>Required</sup> <a name="policy" id="cdk-constructs.AlarmWithTags.applyRemovalPolicy.parameter.policy"></a>
+###### `policy`<sup>Required</sup> <a name="policy" id="@elisasre/cdk-constructs.AlarmWithTags.applyRemovalPolicy.parameter.policy"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicy
 
 ---
 
-##### `addAlarmAction` <a name="addAlarmAction" id="cdk-constructs.AlarmWithTags.addAlarmAction"></a>
+##### `addAlarmAction` <a name="addAlarmAction" id="@elisasre/cdk-constructs.AlarmWithTags.addAlarmAction"></a>
 
 ```typescript
 public addAlarmAction(actions: IAlarmAction): void
@@ -92,13 +92,13 @@ Trigger this action if the alarm fires.
 
 Typically the ARN of an SNS topic or ARN of an AutoScaling policy.
 
-###### `actions`<sup>Required</sup> <a name="actions" id="cdk-constructs.AlarmWithTags.addAlarmAction.parameter.actions"></a>
+###### `actions`<sup>Required</sup> <a name="actions" id="@elisasre/cdk-constructs.AlarmWithTags.addAlarmAction.parameter.actions"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.IAlarmAction
 
 ---
 
-##### `addInsufficientDataAction` <a name="addInsufficientDataAction" id="cdk-constructs.AlarmWithTags.addInsufficientDataAction"></a>
+##### `addInsufficientDataAction` <a name="addInsufficientDataAction" id="@elisasre/cdk-constructs.AlarmWithTags.addInsufficientDataAction"></a>
 
 ```typescript
 public addInsufficientDataAction(actions: IAlarmAction): void
@@ -108,13 +108,13 @@ Trigger this action if there is insufficient data to evaluate the alarm.
 
 Typically the ARN of an SNS topic or ARN of an AutoScaling policy.
 
-###### `actions`<sup>Required</sup> <a name="actions" id="cdk-constructs.AlarmWithTags.addInsufficientDataAction.parameter.actions"></a>
+###### `actions`<sup>Required</sup> <a name="actions" id="@elisasre/cdk-constructs.AlarmWithTags.addInsufficientDataAction.parameter.actions"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.IAlarmAction
 
 ---
 
-##### `addOkAction` <a name="addOkAction" id="cdk-constructs.AlarmWithTags.addOkAction"></a>
+##### `addOkAction` <a name="addOkAction" id="@elisasre/cdk-constructs.AlarmWithTags.addOkAction"></a>
 
 ```typescript
 public addOkAction(actions: IAlarmAction): void
@@ -124,13 +124,13 @@ Trigger this action if the alarm returns from breaching state into ok state.
 
 Typically the ARN of an SNS topic or ARN of an AutoScaling policy.
 
-###### `actions`<sup>Required</sup> <a name="actions" id="cdk-constructs.AlarmWithTags.addOkAction.parameter.actions"></a>
+###### `actions`<sup>Required</sup> <a name="actions" id="@elisasre/cdk-constructs.AlarmWithTags.addOkAction.parameter.actions"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.IAlarmAction
 
 ---
 
-##### `renderAlarmRule` <a name="renderAlarmRule" id="cdk-constructs.AlarmWithTags.renderAlarmRule"></a>
+##### `renderAlarmRule` <a name="renderAlarmRule" id="@elisasre/cdk-constructs.AlarmWithTags.renderAlarmRule"></a>
 
 ```typescript
 public renderAlarmRule(): string
@@ -138,7 +138,7 @@ public renderAlarmRule(): string
 
 AlarmRule indicating ALARM state for Alarm.
 
-##### `toAnnotation` <a name="toAnnotation" id="cdk-constructs.AlarmWithTags.toAnnotation"></a>
+##### `toAnnotation` <a name="toAnnotation" id="@elisasre/cdk-constructs.AlarmWithTags.toAnnotation"></a>
 
 ```typescript
 public toAnnotation(): HorizontalAnnotation
@@ -163,24 +163,24 @@ This might be useful if:
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdk-constructs.AlarmWithTags.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#cdk-constructs.AlarmWithTags.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
-| <code><a href="#cdk-constructs.AlarmWithTags.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
-| <code><a href="#cdk-constructs.AlarmWithTags.fromAlarmArn">fromAlarmArn</a></code> | Import an existing CloudWatch alarm provided an ARN. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.fromAlarmArn">fromAlarmArn</a></code> | Import an existing CloudWatch alarm provided an ARN. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-constructs.AlarmWithTags.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@elisasre/cdk-constructs.AlarmWithTags.isConstruct"></a>
 
 ```typescript
-import { AlarmWithTags } from 'cdk-constructs'
+import { AlarmWithTags } from '@elisasre/cdk-constructs'
 
 AlarmWithTags.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="cdk-constructs.AlarmWithTags.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@elisasre/cdk-constructs.AlarmWithTags.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -188,49 +188,49 @@ Any object.
 
 ---
 
-##### `isOwnedResource` <a name="isOwnedResource" id="cdk-constructs.AlarmWithTags.isOwnedResource"></a>
+##### `isOwnedResource` <a name="isOwnedResource" id="@elisasre/cdk-constructs.AlarmWithTags.isOwnedResource"></a>
 
 ```typescript
-import { AlarmWithTags } from 'cdk-constructs'
+import { AlarmWithTags } from '@elisasre/cdk-constructs'
 
 AlarmWithTags.isOwnedResource(construct: IConstruct)
 ```
 
 Returns true if the construct was created by CDK, and false otherwise.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="cdk-constructs.AlarmWithTags.isOwnedResource.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="@elisasre/cdk-constructs.AlarmWithTags.isOwnedResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
 ---
 
-##### `isResource` <a name="isResource" id="cdk-constructs.AlarmWithTags.isResource"></a>
+##### `isResource` <a name="isResource" id="@elisasre/cdk-constructs.AlarmWithTags.isResource"></a>
 
 ```typescript
-import { AlarmWithTags } from 'cdk-constructs'
+import { AlarmWithTags } from '@elisasre/cdk-constructs'
 
 AlarmWithTags.isResource(construct: IConstruct)
 ```
 
 Check whether the given construct is a Resource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="cdk-constructs.AlarmWithTags.isResource.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="@elisasre/cdk-constructs.AlarmWithTags.isResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
 ---
 
-##### `fromAlarmArn` <a name="fromAlarmArn" id="cdk-constructs.AlarmWithTags.fromAlarmArn"></a>
+##### `fromAlarmArn` <a name="fromAlarmArn" id="@elisasre/cdk-constructs.AlarmWithTags.fromAlarmArn"></a>
 
 ```typescript
-import { AlarmWithTags } from 'cdk-constructs'
+import { AlarmWithTags } from '@elisasre/cdk-constructs'
 
 AlarmWithTags.fromAlarmArn(scope: Construct, id: string, alarmArn: string)
 ```
 
 Import an existing CloudWatch alarm provided an ARN.
 
-###### `scope`<sup>Required</sup> <a name="scope" id="cdk-constructs.AlarmWithTags.fromAlarmArn.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="@elisasre/cdk-constructs.AlarmWithTags.fromAlarmArn.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
@@ -238,7 +238,7 @@ The parent creating construct (usually `this`).
 
 ---
 
-###### `id`<sup>Required</sup> <a name="id" id="cdk-constructs.AlarmWithTags.fromAlarmArn.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="@elisasre/cdk-constructs.AlarmWithTags.fromAlarmArn.parameter.id"></a>
 
 - *Type:* string
 
@@ -246,7 +246,7 @@ The construct's name.
 
 ---
 
-###### `alarmArn`<sup>Required</sup> <a name="alarmArn" id="cdk-constructs.AlarmWithTags.fromAlarmArn.parameter.alarmArn"></a>
+###### `alarmArn`<sup>Required</sup> <a name="alarmArn" id="@elisasre/cdk-constructs.AlarmWithTags.fromAlarmArn.parameter.alarmArn"></a>
 
 - *Type:* string
 
@@ -258,16 +258,16 @@ Alarm ARN (i.e. arn:aws:cloudwatch:<region>:<account-id>:alarm:Foo).
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-constructs.AlarmWithTags.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdk-constructs.AlarmWithTags.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href="#cdk-constructs.AlarmWithTags.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
-| <code><a href="#cdk-constructs.AlarmWithTags.property.alarmArn">alarmArn</a></code> | <code>string</code> | ARN of this alarm. |
-| <code><a href="#cdk-constructs.AlarmWithTags.property.alarmName">alarmName</a></code> | <code>string</code> | Name of this alarm. |
-| <code><a href="#cdk-constructs.AlarmWithTags.property.metric">metric</a></code> | <code>aws-cdk-lib.aws_cloudwatch.IMetric</code> | The metric object this alarm was based on. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.property.alarmArn">alarmArn</a></code> | <code>string</code> | ARN of this alarm. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.property.alarmName">alarmName</a></code> | <code>string</code> | Name of this alarm. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.property.metric">metric</a></code> | <code>aws-cdk-lib.aws_cloudwatch.IMetric</code> | The metric object this alarm was based on. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="cdk-constructs.AlarmWithTags.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@elisasre/cdk-constructs.AlarmWithTags.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -279,7 +279,7 @@ The tree node.
 
 ---
 
-##### `env`<sup>Required</sup> <a name="env" id="cdk-constructs.AlarmWithTags.property.env"></a>
+##### `env`<sup>Required</sup> <a name="env" id="@elisasre/cdk-constructs.AlarmWithTags.property.env"></a>
 
 ```typescript
 public readonly env: ResourceEnvironment;
@@ -298,7 +298,7 @@ that might be different than the stack they were imported into.
 
 ---
 
-##### `stack`<sup>Required</sup> <a name="stack" id="cdk-constructs.AlarmWithTags.property.stack"></a>
+##### `stack`<sup>Required</sup> <a name="stack" id="@elisasre/cdk-constructs.AlarmWithTags.property.stack"></a>
 
 ```typescript
 public readonly stack: Stack;
@@ -310,7 +310,7 @@ The stack in which this resource is defined.
 
 ---
 
-##### `alarmArn`<sup>Required</sup> <a name="alarmArn" id="cdk-constructs.AlarmWithTags.property.alarmArn"></a>
+##### `alarmArn`<sup>Required</sup> <a name="alarmArn" id="@elisasre/cdk-constructs.AlarmWithTags.property.alarmArn"></a>
 
 ```typescript
 public readonly alarmArn: string;
@@ -322,7 +322,7 @@ ARN of this alarm.
 
 ---
 
-##### `alarmName`<sup>Required</sup> <a name="alarmName" id="cdk-constructs.AlarmWithTags.property.alarmName"></a>
+##### `alarmName`<sup>Required</sup> <a name="alarmName" id="@elisasre/cdk-constructs.AlarmWithTags.property.alarmName"></a>
 
 ```typescript
 public readonly alarmName: string;
@@ -334,7 +334,7 @@ Name of this alarm.
 
 ---
 
-##### `metric`<sup>Required</sup> <a name="metric" id="cdk-constructs.AlarmWithTags.property.metric"></a>
+##### `metric`<sup>Required</sup> <a name="metric" id="@elisasre/cdk-constructs.AlarmWithTags.property.metric"></a>
 
 ```typescript
 public readonly metric: IMetric;
@@ -349,12 +349,12 @@ The metric object this alarm was based on.
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### AlarmWithTagsProps <a name="AlarmWithTagsProps" id="cdk-constructs.AlarmWithTagsProps"></a>
+### AlarmWithTagsProps <a name="AlarmWithTagsProps" id="@elisasre/cdk-constructs.AlarmWithTagsProps"></a>
 
-#### Initializer <a name="Initializer" id="cdk-constructs.AlarmWithTagsProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="@elisasre/cdk-constructs.AlarmWithTagsProps.Initializer"></a>
 
 ```typescript
-import { AlarmWithTagsProps } from 'cdk-constructs'
+import { AlarmWithTagsProps } from '@elisasre/cdk-constructs'
 
 const alarmWithTagsProps: AlarmWithTagsProps = { ... }
 ```
@@ -363,21 +363,21 @@ const alarmWithTagsProps: AlarmWithTagsProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.evaluationPeriods">evaluationPeriods</a></code> | <code>number</code> | The number of periods over which data is compared to the specified threshold. |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.threshold">threshold</a></code> | <code>number</code> | The value against which the specified statistic is compared. |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.actionsEnabled">actionsEnabled</a></code> | <code>boolean</code> | Whether the actions for this alarm are enabled. |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.alarmDescription">alarmDescription</a></code> | <code>string</code> | Description for the alarm. |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.alarmName">alarmName</a></code> | <code>string</code> | Name of the alarm. |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.comparisonOperator">comparisonOperator</a></code> | <code>aws-cdk-lib.aws_cloudwatch.ComparisonOperator</code> | Comparison to use to check if metric is breaching. |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.datapointsToAlarm">datapointsToAlarm</a></code> | <code>number</code> | The number of datapoints that must be breaching to trigger the alarm. |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.evaluateLowSampleCountPercentile">evaluateLowSampleCountPercentile</a></code> | <code>string</code> | Specifies whether to evaluate the data and potentially change the alarm state if there are too few data points to be statistically significant. |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.treatMissingData">treatMissingData</a></code> | <code>aws-cdk-lib.aws_cloudwatch.TreatMissingData</code> | Sets how this alarm is to handle missing data points. |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.metric">metric</a></code> | <code>aws-cdk-lib.aws_cloudwatch.IMetric</code> | The metric to add the alarm on. |
-| <code><a href="#cdk-constructs.AlarmWithTagsProps.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.evaluationPeriods">evaluationPeriods</a></code> | <code>number</code> | The number of periods over which data is compared to the specified threshold. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.threshold">threshold</a></code> | <code>number</code> | The value against which the specified statistic is compared. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.actionsEnabled">actionsEnabled</a></code> | <code>boolean</code> | Whether the actions for this alarm are enabled. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.alarmDescription">alarmDescription</a></code> | <code>string</code> | Description for the alarm. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.alarmName">alarmName</a></code> | <code>string</code> | Name of the alarm. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.comparisonOperator">comparisonOperator</a></code> | <code>aws-cdk-lib.aws_cloudwatch.ComparisonOperator</code> | Comparison to use to check if metric is breaching. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.datapointsToAlarm">datapointsToAlarm</a></code> | <code>number</code> | The number of datapoints that must be breaching to trigger the alarm. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.evaluateLowSampleCountPercentile">evaluateLowSampleCountPercentile</a></code> | <code>string</code> | Specifies whether to evaluate the data and potentially change the alarm state if there are too few data points to be statistically significant. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.treatMissingData">treatMissingData</a></code> | <code>aws-cdk-lib.aws_cloudwatch.TreatMissingData</code> | Sets how this alarm is to handle missing data points. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.metric">metric</a></code> | <code>aws-cdk-lib.aws_cloudwatch.IMetric</code> | The metric to add the alarm on. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
 
 ---
 
-##### `evaluationPeriods`<sup>Required</sup> <a name="evaluationPeriods" id="cdk-constructs.AlarmWithTagsProps.property.evaluationPeriods"></a>
+##### `evaluationPeriods`<sup>Required</sup> <a name="evaluationPeriods" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.evaluationPeriods"></a>
 
 ```typescript
 public readonly evaluationPeriods: number;
@@ -389,7 +389,7 @@ The number of periods over which data is compared to the specified threshold.
 
 ---
 
-##### `threshold`<sup>Required</sup> <a name="threshold" id="cdk-constructs.AlarmWithTagsProps.property.threshold"></a>
+##### `threshold`<sup>Required</sup> <a name="threshold" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.threshold"></a>
 
 ```typescript
 public readonly threshold: number;
@@ -401,7 +401,7 @@ The value against which the specified statistic is compared.
 
 ---
 
-##### `actionsEnabled`<sup>Optional</sup> <a name="actionsEnabled" id="cdk-constructs.AlarmWithTagsProps.property.actionsEnabled"></a>
+##### `actionsEnabled`<sup>Optional</sup> <a name="actionsEnabled" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.actionsEnabled"></a>
 
 ```typescript
 public readonly actionsEnabled: boolean;
@@ -414,7 +414,7 @@ Whether the actions for this alarm are enabled.
 
 ---
 
-##### `alarmDescription`<sup>Optional</sup> <a name="alarmDescription" id="cdk-constructs.AlarmWithTagsProps.property.alarmDescription"></a>
+##### `alarmDescription`<sup>Optional</sup> <a name="alarmDescription" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.alarmDescription"></a>
 
 ```typescript
 public readonly alarmDescription: string;
@@ -427,7 +427,7 @@ Description for the alarm.
 
 ---
 
-##### `alarmName`<sup>Optional</sup> <a name="alarmName" id="cdk-constructs.AlarmWithTagsProps.property.alarmName"></a>
+##### `alarmName`<sup>Optional</sup> <a name="alarmName" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.alarmName"></a>
 
 ```typescript
 public readonly alarmName: string;
@@ -440,7 +440,7 @@ Name of the alarm.
 
 ---
 
-##### `comparisonOperator`<sup>Optional</sup> <a name="comparisonOperator" id="cdk-constructs.AlarmWithTagsProps.property.comparisonOperator"></a>
+##### `comparisonOperator`<sup>Optional</sup> <a name="comparisonOperator" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.comparisonOperator"></a>
 
 ```typescript
 public readonly comparisonOperator: ComparisonOperator;
@@ -453,7 +453,7 @@ Comparison to use to check if metric is breaching.
 
 ---
 
-##### `datapointsToAlarm`<sup>Optional</sup> <a name="datapointsToAlarm" id="cdk-constructs.AlarmWithTagsProps.property.datapointsToAlarm"></a>
+##### `datapointsToAlarm`<sup>Optional</sup> <a name="datapointsToAlarm" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.datapointsToAlarm"></a>
 
 ```typescript
 public readonly datapointsToAlarm: number;
@@ -472,7 +472,7 @@ CloudWatch User Guide.
 
 ---
 
-##### `evaluateLowSampleCountPercentile`<sup>Optional</sup> <a name="evaluateLowSampleCountPercentile" id="cdk-constructs.AlarmWithTagsProps.property.evaluateLowSampleCountPercentile"></a>
+##### `evaluateLowSampleCountPercentile`<sup>Optional</sup> <a name="evaluateLowSampleCountPercentile" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.evaluateLowSampleCountPercentile"></a>
 
 ```typescript
 public readonly evaluateLowSampleCountPercentile: string;
@@ -487,7 +487,7 @@ Used only for alarms that are based on percentiles.
 
 ---
 
-##### `treatMissingData`<sup>Optional</sup> <a name="treatMissingData" id="cdk-constructs.AlarmWithTagsProps.property.treatMissingData"></a>
+##### `treatMissingData`<sup>Optional</sup> <a name="treatMissingData" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.treatMissingData"></a>
 
 ```typescript
 public readonly treatMissingData: TreatMissingData;
@@ -500,7 +500,7 @@ Sets how this alarm is to handle missing data points.
 
 ---
 
-##### `metric`<sup>Required</sup> <a name="metric" id="cdk-constructs.AlarmWithTagsProps.property.metric"></a>
+##### `metric`<sup>Required</sup> <a name="metric" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.metric"></a>
 
 ```typescript
 public readonly metric: IMetric;
@@ -515,7 +515,7 @@ custom Metric objects by instantiating one.
 
 ---
 
-##### `tags`<sup>Required</sup> <a name="tags" id="cdk-constructs.AlarmWithTagsProps.property.tags"></a>
+##### `tags`<sup>Required</sup> <a name="tags" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.tags"></a>
 
 ```typescript
 public readonly tags: {[ key: string ]: string};
