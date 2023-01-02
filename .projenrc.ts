@@ -1,4 +1,5 @@
 import { awscdk, javascript, TaskStep, TextFile } from 'projen';
+import { GithubCredentials } from 'projen/lib/github';
 import { JobPermission } from 'projen/lib/github/workflows-model';
 
 const nodejsVersion = '18';
@@ -22,6 +23,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   gitignore: ['test/cdk-integ.out*'],
   githubOptions: {
     mergify: false,
+    projenCredentials: GithubCredentials.fromPersonalAccessToken({ secret: 'DEVOPS_CI_PAT' }),
   },
   dependabot: true,
   licensed: false,
