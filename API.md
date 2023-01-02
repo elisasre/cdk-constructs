@@ -9,14 +9,14 @@
 ```typescript
 import { AlarmWithTags } from '@elisasre/cdk-constructs'
 
-new AlarmWithTags(scope: Construct, id: string, props: AlarmWithTagsProps)
+new AlarmWithTags(scope: Construct, id: string, props: AlarmProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.props">props</a></code> | <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps">AlarmWithTagsProps</a></code> | *No description.* |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.props">props</a></code> | <code>aws-cdk-lib.aws_cloudwatch.AlarmProps</code> | *No description.* |
 
 ---
 
@@ -34,7 +34,7 @@ new AlarmWithTags(scope: Construct, id: string, props: AlarmWithTagsProps)
 
 ##### `props`<sup>Required</sup> <a name="props" id="@elisasre/cdk-constructs.AlarmWithTags.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#@elisasre/cdk-constructs.AlarmWithTagsProps">AlarmWithTagsProps</a>
+- *Type:* aws-cdk-lib.aws_cloudwatch.AlarmProps
 
 ---
 
@@ -230,6 +230,8 @@ AlarmWithTags.fromAlarmArn(scope: Construct, id: string, alarmArn: string)
 
 Import an existing CloudWatch alarm provided an ARN.
 
+Imported alarms can be tagged, but not modified.
+
 ###### `scope`<sup>Required</sup> <a name="scope" id="@elisasre/cdk-constructs.AlarmWithTags.fromAlarmArn.parameter.scope"></a>
 
 - *Type:* constructs.Construct
@@ -264,6 +266,7 @@ Alarm ARN (i.e. arn:aws:cloudwatch:<region>:<account-id>:alarm:Foo).
 | <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.property.alarmArn">alarmArn</a></code> | <code>string</code> | ARN of this alarm. |
 | <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.property.alarmName">alarmName</a></code> | <code>string</code> | Name of this alarm. |
 | <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.property.metric">metric</a></code> | <code>aws-cdk-lib.aws_cloudwatch.IMetric</code> | The metric object this alarm was based on. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.property.tags">tags</a></code> | <code>aws-cdk-lib.TagManager</code> | *No description.* |
 
 ---
 
@@ -346,184 +349,17 @@ The metric object this alarm was based on.
 
 ---
 
-
-## Structs <a name="Structs" id="Structs"></a>
-
-### AlarmWithTagsProps <a name="AlarmWithTagsProps" id="@elisasre/cdk-constructs.AlarmWithTagsProps"></a>
-
-#### Initializer <a name="Initializer" id="@elisasre/cdk-constructs.AlarmWithTagsProps.Initializer"></a>
+##### `tags`<sup>Required</sup> <a name="tags" id="@elisasre/cdk-constructs.AlarmWithTags.property.tags"></a>
 
 ```typescript
-import { AlarmWithTagsProps } from '@elisasre/cdk-constructs'
-
-const alarmWithTagsProps: AlarmWithTagsProps = { ... }
+public readonly tags: TagManager;
 ```
 
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.evaluationPeriods">evaluationPeriods</a></code> | <code>number</code> | The number of periods over which data is compared to the specified threshold. |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.threshold">threshold</a></code> | <code>number</code> | The value against which the specified statistic is compared. |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.actionsEnabled">actionsEnabled</a></code> | <code>boolean</code> | Whether the actions for this alarm are enabled. |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.alarmDescription">alarmDescription</a></code> | <code>string</code> | Description for the alarm. |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.alarmName">alarmName</a></code> | <code>string</code> | Name of the alarm. |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.comparisonOperator">comparisonOperator</a></code> | <code>aws-cdk-lib.aws_cloudwatch.ComparisonOperator</code> | Comparison to use to check if metric is breaching. |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.datapointsToAlarm">datapointsToAlarm</a></code> | <code>number</code> | The number of datapoints that must be breaching to trigger the alarm. |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.evaluateLowSampleCountPercentile">evaluateLowSampleCountPercentile</a></code> | <code>string</code> | Specifies whether to evaluate the data and potentially change the alarm state if there are too few data points to be statistically significant. |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.treatMissingData">treatMissingData</a></code> | <code>aws-cdk-lib.aws_cloudwatch.TreatMissingData</code> | Sets how this alarm is to handle missing data points. |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.metric">metric</a></code> | <code>aws-cdk-lib.aws_cloudwatch.IMetric</code> | The metric to add the alarm on. |
-| <code><a href="#@elisasre/cdk-constructs.AlarmWithTagsProps.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+- *Type:* aws-cdk-lib.TagManager
 
 ---
 
-##### `evaluationPeriods`<sup>Required</sup> <a name="evaluationPeriods" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.evaluationPeriods"></a>
 
-```typescript
-public readonly evaluationPeriods: number;
-```
-
-- *Type:* number
-
-The number of periods over which data is compared to the specified threshold.
-
----
-
-##### `threshold`<sup>Required</sup> <a name="threshold" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.threshold"></a>
-
-```typescript
-public readonly threshold: number;
-```
-
-- *Type:* number
-
-The value against which the specified statistic is compared.
-
----
-
-##### `actionsEnabled`<sup>Optional</sup> <a name="actionsEnabled" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.actionsEnabled"></a>
-
-```typescript
-public readonly actionsEnabled: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Whether the actions for this alarm are enabled.
-
----
-
-##### `alarmDescription`<sup>Optional</sup> <a name="alarmDescription" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.alarmDescription"></a>
-
-```typescript
-public readonly alarmDescription: string;
-```
-
-- *Type:* string
-- *Default:* No description
-
-Description for the alarm.
-
----
-
-##### `alarmName`<sup>Optional</sup> <a name="alarmName" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.alarmName"></a>
-
-```typescript
-public readonly alarmName: string;
-```
-
-- *Type:* string
-- *Default:* Automatically generated name
-
-Name of the alarm.
-
----
-
-##### `comparisonOperator`<sup>Optional</sup> <a name="comparisonOperator" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.comparisonOperator"></a>
-
-```typescript
-public readonly comparisonOperator: ComparisonOperator;
-```
-
-- *Type:* aws-cdk-lib.aws_cloudwatch.ComparisonOperator
-- *Default:* GreaterThanOrEqualToThreshold
-
-Comparison to use to check if metric is breaching.
-
----
-
-##### `datapointsToAlarm`<sup>Optional</sup> <a name="datapointsToAlarm" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.datapointsToAlarm"></a>
-
-```typescript
-public readonly datapointsToAlarm: number;
-```
-
-- *Type:* number
-- *Default:* ``evaluationPeriods``
-
-The number of datapoints that must be breaching to trigger the alarm.
-
-This is used only if you are setting an "M
-out of N" alarm. In that case, this value is the M. For more information, see Evaluating an Alarm in the Amazon
-CloudWatch User Guide.
-
-> [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation)
-
----
-
-##### `evaluateLowSampleCountPercentile`<sup>Optional</sup> <a name="evaluateLowSampleCountPercentile" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.evaluateLowSampleCountPercentile"></a>
-
-```typescript
-public readonly evaluateLowSampleCountPercentile: string;
-```
-
-- *Type:* string
-- *Default:* Not configured.
-
-Specifies whether to evaluate the data and potentially change the alarm state if there are too few data points to be statistically significant.
-
-Used only for alarms that are based on percentiles.
-
----
-
-##### `treatMissingData`<sup>Optional</sup> <a name="treatMissingData" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.treatMissingData"></a>
-
-```typescript
-public readonly treatMissingData: TreatMissingData;
-```
-
-- *Type:* aws-cdk-lib.aws_cloudwatch.TreatMissingData
-- *Default:* TreatMissingData.Missing
-
-Sets how this alarm is to handle missing data points.
-
----
-
-##### `metric`<sup>Required</sup> <a name="metric" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.metric"></a>
-
-```typescript
-public readonly metric: IMetric;
-```
-
-- *Type:* aws-cdk-lib.aws_cloudwatch.IMetric
-
-The metric to add the alarm on.
-
-Metric objects can be obtained from most resources, or you can construct
-custom Metric objects by instantiating one.
-
----
-
-##### `tags`<sup>Required</sup> <a name="tags" id="@elisasre/cdk-constructs.AlarmWithTagsProps.property.tags"></a>
-
-```typescript
-public readonly tags: {[ key: string ]: string};
-```
-
-- *Type:* {[ key: string ]: string}
-
----
 
 
 

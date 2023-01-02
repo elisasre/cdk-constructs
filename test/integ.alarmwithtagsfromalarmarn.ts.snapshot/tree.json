@@ -4,23 +4,23 @@
     "id": "App",
     "path": "",
     "children": {
-      "IntegrationTestStackForAlarmWithTags": {
-        "id": "IntegrationTestStackForAlarmWithTags",
-        "path": "IntegrationTestStackForAlarmWithTags",
+      "IntegrationTestStackForAlarmWithTagsFromAlarmArn": {
+        "id": "IntegrationTestStackForAlarmWithTagsFromAlarmArn",
+        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn",
         "children": {
-          "AlarmWithTagsConstruct": {
-            "id": "AlarmWithTagsConstruct",
-            "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct",
+          "AlarmConstruct": {
+            "id": "AlarmConstruct",
+            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmConstruct",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/Resource",
+                "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmConstruct/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::CloudWatch::Alarm",
                   "aws:cdk:cloudformation:props": {
                     "comparisonOperator": "GreaterThanOrEqualToThreshold",
                     "evaluationPeriods": 1,
-                    "alarmName": "TestAlarmForIntegrationTests",
+                    "alarmName": "TestAlarmForIntegrationTestsFromAlarmArn",
                     "metricName": "TestMetric",
                     "namespace": "Test",
                     "period": 300,
@@ -32,18 +32,28 @@
                   "fqn": "aws-cdk-lib.aws_cloudwatch.CfnAlarm",
                   "version": "2.57.0"
                 }
-              },
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_cloudwatch.Alarm",
+              "version": "2.57.0"
+            }
+          },
+          "AlarmWithTagsConstruct": {
+            "id": "AlarmWithTagsConstruct",
+            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct",
+            "children": {
               "custom-resource-lambda": {
                 "id": "custom-resource-lambda",
-                "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda",
+                "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/custom-resource-lambda",
                 "children": {
                   "ServiceRole": {
                     "id": "ServiceRole",
-                    "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole",
+                    "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole",
                     "children": {
                       "ImportServiceRole": {
                         "id": "ImportServiceRole",
-                        "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole/ImportServiceRole",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole/ImportServiceRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
                           "version": "2.57.0"
@@ -51,7 +61,7 @@
                       },
                       "Resource": {
                         "id": "Resource",
-                        "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole/Resource",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                           "aws:cdk:cloudformation:props": {
@@ -96,11 +106,11 @@
                       },
                       "DefaultPolicy": {
                         "id": "DefaultPolicy",
-                        "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole/DefaultPolicy",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole/DefaultPolicy",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole/DefaultPolicy/Resource",
+                            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole/DefaultPolicy/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                               "aws:cdk:cloudformation:props": {
@@ -144,11 +154,11 @@
                   },
                   "Code": {
                     "id": "Code",
-                    "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/Code",
+                    "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/custom-resource-lambda/Code",
                     "children": {
                       "Stage": {
                         "id": "Stage",
-                        "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/Code/Stage",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/custom-resource-lambda/Code/Stage",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.AssetStaging",
                           "version": "2.57.0"
@@ -156,7 +166,7 @@
                       },
                       "AssetBucket": {
                         "id": "AssetBucket",
-                        "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/Code/AssetBucket",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/custom-resource-lambda/Code/AssetBucket",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                           "version": "2.57.0"
@@ -170,7 +180,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/Resource",
+                    "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/custom-resource-lambda/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                       "aws:cdk:cloudformation:props": {
@@ -216,19 +226,19 @@
               },
               "alarm-tag-provider": {
                 "id": "alarm-tag-provider",
-                "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider",
+                "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider",
                 "children": {
                   "framework-onEvent": {
                     "id": "framework-onEvent",
-                    "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent",
+                    "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent",
                     "children": {
                       "ServiceRole": {
                         "id": "ServiceRole",
-                        "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole",
                         "children": {
                           "ImportServiceRole": {
                             "id": "ImportServiceRole",
-                            "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole/ImportServiceRole",
+                            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole/ImportServiceRole",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.Resource",
                               "version": "2.57.0"
@@ -236,7 +246,7 @@
                           },
                           "Resource": {
                             "id": "Resource",
-                            "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole/Resource",
+                            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                               "aws:cdk:cloudformation:props": {
@@ -281,11 +291,11 @@
                           },
                           "DefaultPolicy": {
                             "id": "DefaultPolicy",
-                            "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole/DefaultPolicy",
+                            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole/DefaultPolicy",
                             "children": {
                               "Resource": {
                                 "id": "Resource",
-                                "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource",
+                                "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole/DefaultPolicy/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                                   "aws:cdk:cloudformation:props": {
@@ -347,11 +357,11 @@
                       },
                       "Code": {
                         "id": "Code",
-                        "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/Code",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/Code",
                         "children": {
                           "Stage": {
                             "id": "Stage",
-                            "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/Code/Stage",
+                            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/Code/Stage",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.AssetStaging",
                               "version": "2.57.0"
@@ -359,7 +369,7 @@
                           },
                           "AssetBucket": {
                             "id": "AssetBucket",
-                            "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/Code/AssetBucket",
+                            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/Code/AssetBucket",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                               "version": "2.57.0"
@@ -373,7 +383,7 @@
                       },
                       "Resource": {
                         "id": "Resource",
-                        "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/Resource",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                           "aws:cdk:cloudformation:props": {
@@ -389,7 +399,7 @@
                                 "Arn"
                               ]
                             },
-                            "description": "AWS CDK resource provider framework - onEvent (IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider)",
+                            "description": "AWS CDK resource provider framework - onEvent (IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider)",
                             "environment": {
                               "variables": {
                                 "USER_ON_EVENT_FUNCTION_ARN": {
@@ -418,11 +428,11 @@
                       },
                       "LogRetention": {
                         "id": "LogRetention",
-                        "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/LogRetention",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/LogRetention",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/LogRetention/Resource",
+                            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/LogRetention/Resource",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
                               "version": "2.57.0"
@@ -436,7 +446,7 @@
                       },
                       "LogGroup": {
                         "id": "LogGroup",
-                        "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/LogGroup",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/LogGroup",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
                           "version": "2.57.0"
@@ -456,11 +466,11 @@
               },
               "AlarmWithTagsConstruct": {
                 "id": "AlarmWithTagsConstruct",
-                "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/AlarmWithTagsConstruct",
+                "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/AlarmWithTagsConstruct",
                 "children": {
                   "Default": {
                     "id": "Default",
-                    "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/AlarmWithTagsConstruct/Default",
+                    "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/AlarmWithTagsConstruct/Default",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
                       "version": "2.57.0"
@@ -474,21 +484,21 @@
               }
             },
             "constructInfo": {
-              "fqn": "aws-cdk-lib.aws_cloudwatch.Alarm",
+              "fqn": "aws-cdk-lib.aws_cloudwatch.AlarmBase",
               "version": "2.57.0"
             }
           },
           "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a": {
             "id": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
-            "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
+            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a",
             "children": {
               "Code": {
                 "id": "Code",
-                "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
+                "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
+                    "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.57.0"
@@ -496,7 +506,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
+                    "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.57.0"
@@ -510,11 +520,11 @@
               },
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole",
+                "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole",
                 "children": {
                   "ImportServiceRole": {
                     "id": "ImportServiceRole",
-                    "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
+                    "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.57.0"
@@ -522,7 +532,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource",
+                    "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -561,11 +571,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy",
+                    "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource",
+                        "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -609,7 +619,7 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
+                "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
                   "version": "2.57.0"
@@ -623,7 +633,7 @@
           },
           "BootstrapVersion": {
             "id": "BootstrapVersion",
-            "path": "IntegrationTestStackForAlarmWithTags/BootstrapVersion",
+            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/BootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
               "version": "2.57.0"
@@ -631,7 +641,7 @@
           },
           "CheckBootstrapVersion": {
             "id": "CheckBootstrapVersion",
-            "path": "IntegrationTestStackForAlarmWithTags/CheckBootstrapVersion",
+            "path": "IntegrationTestStackForAlarmWithTagsFromAlarmArn/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
               "version": "2.57.0"
@@ -643,17 +653,17 @@
           "version": "2.57.0"
         }
       },
-      "TestAlarmTags": {
-        "id": "TestAlarmTags",
-        "path": "TestAlarmTags",
+      "TestAlarmTagsFromAlarmArn": {
+        "id": "TestAlarmTagsFromAlarmArn",
+        "path": "TestAlarmTagsFromAlarmArn",
         "children": {
           "DefaultTest": {
             "id": "DefaultTest",
-            "path": "TestAlarmTags/DefaultTest",
+            "path": "TestAlarmTagsFromAlarmArn/DefaultTest",
             "children": {
               "Default": {
                 "id": "Default",
-                "path": "TestAlarmTags/DefaultTest/Default",
+                "path": "TestAlarmTagsFromAlarmArn/DefaultTest/Default",
                 "constructInfo": {
                   "fqn": "constructs.Construct",
                   "version": "10.0.5"
@@ -661,19 +671,19 @@
               },
               "DeployAssert": {
                 "id": "DeployAssert",
-                "path": "TestAlarmTags/DefaultTest/DeployAssert",
+                "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert",
                 "children": {
                   "AwsApiCallCloudWatchlistTagsForResource": {
                     "id": "AwsApiCallCloudWatchlistTagsForResource",
-                    "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource",
+                    "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource",
                     "children": {
                       "SdkProvider": {
                         "id": "SdkProvider",
-                        "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/SdkProvider",
+                        "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/SdkProvider",
                         "children": {
                           "AssertionsProvider": {
                             "id": "AssertionsProvider",
-                            "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/SdkProvider/AssertionsProvider",
+                            "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/SdkProvider/AssertionsProvider",
                             "constructInfo": {
                               "fqn": "constructs.Construct",
                               "version": "10.0.5"
@@ -687,11 +697,11 @@
                       },
                       "Default": {
                         "id": "Default",
-                        "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/Default",
+                        "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/Default",
                         "children": {
                           "Default": {
                             "id": "Default",
-                            "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/Default/Default",
+                            "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/Default/Default",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
                               "version": "2.57.0"
@@ -705,7 +715,7 @@
                       },
                       "AssertionResults": {
                         "id": "AssertionResults",
-                        "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/AssertionResults",
+                        "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/AssertionResults",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnOutput",
                           "version": "2.57.0"
@@ -719,11 +729,11 @@
                   },
                   "SingletonFunction1488541a7b23466481b69b4408076b81": {
                     "id": "SingletonFunction1488541a7b23466481b69b4408076b81",
-                    "path": "TestAlarmTags/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81",
+                    "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81",
                     "children": {
                       "Staging": {
                         "id": "Staging",
-                        "path": "TestAlarmTags/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Staging",
+                        "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Staging",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.AssetStaging",
                           "version": "2.57.0"
@@ -731,7 +741,7 @@
                       },
                       "Role": {
                         "id": "Role",
-                        "path": "TestAlarmTags/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Role",
+                        "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Role",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
                           "version": "2.57.0"
@@ -739,7 +749,7 @@
                       },
                       "Handler": {
                         "id": "Handler",
-                        "path": "TestAlarmTags/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Handler",
+                        "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Handler",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
                           "version": "2.57.0"
@@ -753,7 +763,7 @@
                   },
                   "BootstrapVersion": {
                     "id": "BootstrapVersion",
-                    "path": "TestAlarmTags/DefaultTest/DeployAssert/BootstrapVersion",
+                    "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/BootstrapVersion",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnParameter",
                       "version": "2.57.0"
@@ -761,7 +771,7 @@
                   },
                   "CheckBootstrapVersion": {
                     "id": "CheckBootstrapVersion",
-                    "path": "TestAlarmTags/DefaultTest/DeployAssert/CheckBootstrapVersion",
+                    "path": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert/CheckBootstrapVersion",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnRule",
                       "version": "2.57.0"

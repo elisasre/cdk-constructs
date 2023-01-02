@@ -1,11 +1,11 @@
 {
  "Resources": {
-  "AlarmWithTagsConstructB181E8AF": {
+  "AlarmConstruct19D9277E": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
     "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "EvaluationPeriods": 1,
-    "AlarmName": "TestAlarmForIntegrationTests",
+    "AlarmName": "TestAlarmForIntegrationTestsFromAlarmArn",
     "MetricName": "TestMetric",
     "Namespace": "Test",
     "Period": 300,
@@ -40,6 +40,12 @@
         ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
        ]
       ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "foo",
+      "Value": "bar"
      }
     ]
    }
@@ -91,6 +97,12 @@
     },
     "Handler": "index.handler",
     "Runtime": "nodejs16.x",
+    "Tags": [
+     {
+      "Key": "foo",
+      "Value": "bar"
+     }
+    ],
     "Timeout": 30
    },
    "DependsOn": [
@@ -125,6 +137,12 @@
         ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
        ]
       ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "foo",
+      "Value": "bar"
      }
     ]
    }
@@ -186,7 +204,7 @@
       "Arn"
      ]
     },
-    "Description": "AWS CDK resource provider framework - onEvent (IntegrationTestStack/AlarmWithTagsConstruct/alarm-tag-provider)",
+    "Description": "AWS CDK resource provider framework - onEvent (IntegrationTestStackForAlarmWithTagsFromAlarmArn/AlarmWithTagsConstruct/alarm-tag-provider)",
     "Environment": {
      "Variables": {
       "USER_ON_EVENT_FUNCTION_ARN": {
@@ -199,6 +217,12 @@
     },
     "Handler": "framework.onEvent",
     "Runtime": "nodejs14.x",
+    "Tags": [
+     {
+      "Key": "foo",
+      "Value": "bar"
+     }
+    ],
     "Timeout": 900
    },
    "DependsOn": [
@@ -246,7 +270,7 @@
     ],
     "AlarmArn": {
      "Fn::GetAtt": [
-      "AlarmWithTagsConstructB181E8AF",
+      "AlarmConstruct19D9277E",
       "Arn"
      ]
     }

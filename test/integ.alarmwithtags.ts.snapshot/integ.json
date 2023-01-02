@@ -3,7 +3,7 @@
   "testCases": {
     "TestAlarmTags/DefaultTest": {
       "stacks": [
-        "IntegrationTestStack"
+        "IntegrationTestStackForAlarmWithTags"
       ],
       "diffAssets": true,
       "assertionStack": "TestAlarmTags/DefaultTest/DeployAssert",

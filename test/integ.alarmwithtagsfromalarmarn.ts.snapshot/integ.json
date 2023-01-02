@@ -1,0 +1,13 @@
+{
+  "version": "22.0.0",
+  "testCases": {
+    "TestAlarmTagsFromAlarmArn/DefaultTest": {
+      "stacks": [
+        "IntegrationTestStackForAlarmWithTagsFromAlarmArn"
+      ],
+      "diffAssets": true,
+      "assertionStack": "TestAlarmTagsFromAlarmArn/DefaultTest/DeployAssert",
+      "assertionStackName": "TestAlarmTagsFromAlarmArnDefaultTestDeployAssert37106B05"
+    }
+  }
+}

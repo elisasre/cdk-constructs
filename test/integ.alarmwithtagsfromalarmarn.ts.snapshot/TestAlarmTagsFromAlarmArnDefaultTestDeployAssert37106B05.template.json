@@ -13,10 +13,10 @@
     "api": "listTagsForResource",
     "expected": "{\"$ObjectLike\":{\"Tags\":[{\"Key\":\"foo\",\"Value\":\"bar\"}]}}",
     "parameters": {
-     "ResourceARN": "arn:aws:cloudwatch:eu-central-1:762212084818:alarm:TestAlarmForIntegrationTests"
+     "ResourceARN": "arn:aws:cloudwatch:eu-central-1:762212084818:alarm:TestAlarmForIntegrationTestsFromAlarmArn"
     },
     "flattenResponse": "false",
-    "salt": "1672663196673"
+    "salt": "1672662963732"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
