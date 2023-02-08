@@ -98,6 +98,24 @@ project.buildWorkflow?.addPostBuildJob('integrationtest', {
   ],
 });
 
+project.buildWorkflow?.addPostBuildJob('automerge', {
+  needs: ['integrationtest'],
+  permissions: {
+    pullRequests: JobPermission.WRITE,
+    contents: JobPermission.WRITE,
+  },
+  runsOn: ['ubuntu-latest'],
+  steps: [
+    {
+      name: 'Automerge dependabot PR',
+      uses: 'elisa-actions/github-action-merge-dependabot@v3',
+      with: {
+        target: 'minor',
+      },
+    },
+  ],
+});
+
 new TextFile(project, '.nvmrc', {
   lines: [nodejsVersion],
 });

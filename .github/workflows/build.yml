@@ -142,3 +142,23 @@ jobs:
           aws-region: eu-central-1
       - name: Run integration tests
         run: npx projen integrationtest
+  automerge:
+    needs: integrationtest
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    if: "! needs.build.outputs.self_mutation_happened"
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+          path: dist
+      - name: Restore build artifact permissions
+        run: cd dist && setfacl --restore=permissions-backup.acl
+        continue-on-error: true
+      - name: Automerge dependabot PR
+        uses: elisa-actions/github-action-merge-dependabot@v3
+        with:
+          target: minor
