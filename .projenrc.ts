@@ -4,14 +4,12 @@ import { JobPermission } from 'projen/lib/github/workflows-model';
 
 const nodejsVersion = '18';
 
-// const runners = ['kaas', 'self-hosted'];
-
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Elisa SRE',
   keywords: ['aws', 'cdk', 'constructs'],
   depsUpgrade: false,
   authorAddress: '',
-  cdkVersion: '2.57.0',
+  cdkVersion: '2.100.0',
   defaultReleaseBranch: 'main',
   name: '@elisasre/cdk-constructs',
   packageManager: javascript.NodePackageManager.NPM,
@@ -30,7 +28,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   licensed: false,
   projenrcTs: true,
   workflowNodeVersion: nodejsVersion,
-  // workflowRunsOn: runners,
 });
 
 

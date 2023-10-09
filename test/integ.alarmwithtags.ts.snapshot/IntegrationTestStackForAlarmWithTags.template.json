@@ -3,9 +3,9 @@
   "AlarmWithTagsConstructB181E8AF": {
    "Type": "AWS::CloudWatch::Alarm",
    "Properties": {
+    "AlarmName": "TestAlarmForIntegrationTests",
     "ComparisonOperator": "GreaterThanOrEqualToThreshold",
     "EvaluationPeriods": 1,
-    "AlarmName": "TestAlarmForIntegrationTests",
     "MetricName": "TestMetric",
     "Namespace": "Test",
     "Period": 300,
@@ -81,13 +81,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "be003ddd3ee30f84935bf00c7ea6a2c019a9a874837f74bf451d77f353cb0210.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "AlarmWithTagsConstructcustomresourcelambdaServiceRole0D9569CD",
-      "Arn"
-     ]
+     "S3Key": "0f39440ce486a91e12cf6920fb2f313a8a051f9af7faab45bd9655df5e9cf217.zip"
     },
     "Description": "Create, Delete or Update alarm tags",
     "Environment": {
@@ -96,6 +90,12 @@
      }
     },
     "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "AlarmWithTagsConstructcustomresourcelambdaServiceRole0D9569CD",
+      "Arn"
+     ]
+    },
     "Runtime": "nodejs16.x",
     "Tags": [
      {
@@ -196,13 +196,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "2157f4ab8972014e220d70707296b292b3b7301f163f7cd641ccda0ee663530f.zip"
-    },
-    "Role": {
-     "Fn::GetAtt": [
-      "AlarmWithTagsConstructalarmtagproviderframeworkonEventServiceRole511DF4FE",
-      "Arn"
-     ]
+     "S3Key": "7382a0addb9f34974a1ea6c6c9b063882af874828f366f5c93b2b7b64db15c94.zip"
     },
     "Description": "AWS CDK resource provider framework - onEvent (IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider)",
     "Environment": {
@@ -216,7 +210,13 @@
      }
     },
     "Handler": "framework.onEvent",
-    "Runtime": "nodejs14.x",
+    "Role": {
+     "Fn::GetAtt": [
+      "AlarmWithTagsConstructalarmtagproviderframeworkonEventServiceRole511DF4FE",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
     "Tags": [
      {
       "Key": "foo",
@@ -337,12 +337,13 @@
    "Type": "AWS::Lambda::Function",
    "Properties": {
     "Handler": "index.handler",
-    "Runtime": "nodejs14.x",
+    "Runtime": "nodejs18.x",
+    "Timeout": 900,
     "Code": {
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "eb5b005c858404ea0c8f68098ed5dcdf5340e02461f149751d10f59c210d5ef8.zip"
+     "S3Key": "5bc602ecde93c947efe5899ae355f999986a1acbe610b1c0b9c468d738857555.zip"
     },
     "Role": {
      "Fn::GetAtt": [

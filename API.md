@@ -1,3 +1,56 @@
+# Constructs for AWS CDK
+
+## Usage
+
+Create a Github token that has read access to packages and add it to your .npmrc, in CI you'll naturally need a token for packages.
+
+Add @elisasre/cdk-constructs as a dependency of your CDK project and import the desired construct.
+
+## Alarm with tags
+
+Alarm with tags extends the [standard CDK alarm construct](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_cloudwatch.Alarm.html) by allowing tagging of alarms, which Cloudformation does not currently support out of the box.
+
+### Creating a tagged alarm
+
+    declare const fn: lambda.Function;
+
+    const minuteErrorRate = fn.metricErrors({
+      statistic: cloudwatch.Stats.AVERAGE,
+      period: Duration.minutes(1),
+      label: 'Lambda failure rate'
+    });
+
+    const alarm = new AlarmWithTags(this, 'myalarm', {
+        evaluationPeriods: 3,
+        metric: minuteErrorRate,
+        threshold: 1,
+        comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+    });
+
+    Tags.of(alarm).add('foo', 'bar');
+
+### Tagging an existing alarm
+
+    declare const fn: lambda.Function;
+
+    const minuteErrorRate = fn.metricErrors({
+      statistic: cloudwatch.Stats.AVERAGE,
+      period: Duration.minutes(1),
+      label: 'Lambda failure rate'
+    });
+
+    const alarm = minuteErrorRate.createAlarm(this, 'myalarm', {
+        evaluationPeriods: 3,
+        threshold: 1,
+        comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+    });
+
+    const myTaggedAlarm = AlarmWithTags.fromArn(this, 'myalarmwithtags', alarm.alarmArn);
+
+    Tags.of(myTaggedAlarm).add('foo', 'bar');
+
+
+[API reference](API.md)
 # API Reference <a name="API Reference" id="api-reference"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
@@ -90,7 +143,7 @@ public addAlarmAction(actions: IAlarmAction): void
 
 Trigger this action if the alarm fires.
 
-Typically the ARN of an SNS topic or ARN of an AutoScaling policy.
+Typically SnsAcion or AutoScalingAction.
 
 ###### `actions`<sup>Required</sup> <a name="actions" id="@elisasre/cdk-constructs.AlarmWithTags.addAlarmAction.parameter.actions"></a>
 
@@ -106,7 +159,7 @@ public addInsufficientDataAction(actions: IAlarmAction): void
 
 Trigger this action if there is insufficient data to evaluate the alarm.
 
-Typically the ARN of an SNS topic or ARN of an AutoScaling policy.
+Typically SnsAction or AutoScalingAction.
 
 ###### `actions`<sup>Required</sup> <a name="actions" id="@elisasre/cdk-constructs.AlarmWithTags.addInsufficientDataAction.parameter.actions"></a>
 
@@ -122,7 +175,7 @@ public addOkAction(actions: IAlarmAction): void
 
 Trigger this action if the alarm returns from breaching state into ok state.
 
-Typically the ARN of an SNS topic or ARN of an AutoScaling policy.
+Typically SnsAction or AutoScalingAction.
 
 ###### `actions`<sup>Required</sup> <a name="actions" id="@elisasre/cdk-constructs.AlarmWithTags.addOkAction.parameter.actions"></a>
 
@@ -154,8 +207,8 @@ a HorizontalAnnotation and add it as an annotation to another graph.
 This might be useful if:
 
 - You want to show multiple alarms inside a single graph, for example if
-   you have both a "small margin/long period" alarm as well as a
-   "large margin/short period" alarm.
+  you have both a "small margin/long period" alarm as well as a
+  "large margin/short period" alarm.
 
 - You want to show an Alarm line in a graph with multiple metrics in it.
 
@@ -167,6 +220,7 @@ This might be useful if:
 | <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
 | <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
 | <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.fromAlarmArn">fromAlarmArn</a></code> | Import an existing CloudWatch alarm provided an ARN. |
+| <code><a href="#@elisasre/cdk-constructs.AlarmWithTags.fromAlarmName">fromAlarmName</a></code> | Import an existing CloudWatch alarm provided an Name. |
 
 ---
 
@@ -253,6 +307,40 @@ The construct's name.
 - *Type:* string
 
 Alarm ARN (i.e. arn:aws:cloudwatch:<region>:<account-id>:alarm:Foo).
+
+---
+
+##### `fromAlarmName` <a name="fromAlarmName" id="@elisasre/cdk-constructs.AlarmWithTags.fromAlarmName"></a>
+
+```typescript
+import { AlarmWithTags } from '@elisasre/cdk-constructs'
+
+AlarmWithTags.fromAlarmName(scope: Construct, id: string, alarmName: string)
+```
+
+Import an existing CloudWatch alarm provided an Name.
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@elisasre/cdk-constructs.AlarmWithTags.fromAlarmName.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+The parent creating construct (usually `this`).
+
+---
+
+###### `id`<sup>Required</sup> <a name="id" id="@elisasre/cdk-constructs.AlarmWithTags.fromAlarmName.parameter.id"></a>
+
+- *Type:* string
+
+The construct's name.
+
+---
+
+###### `alarmName`<sup>Required</sup> <a name="alarmName" id="@elisasre/cdk-constructs.AlarmWithTags.fromAlarmName.parameter.alarmName"></a>
+
+- *Type:* string
+
+Alarm Name.
 
 ---
 

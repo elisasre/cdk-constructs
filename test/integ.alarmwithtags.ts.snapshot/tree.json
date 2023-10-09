@@ -18,9 +18,9 @@
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::CloudWatch::Alarm",
                   "aws:cdk:cloudformation:props": {
+                    "alarmName": "TestAlarmForIntegrationTests",
                     "comparisonOperator": "GreaterThanOrEqualToThreshold",
                     "evaluationPeriods": 1,
-                    "alarmName": "TestAlarmForIntegrationTests",
                     "metricName": "TestMetric",
                     "namespace": "Test",
                     "period": 300,
@@ -30,7 +30,7 @@
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_cloudwatch.CfnAlarm",
-                  "version": "2.57.0"
+                  "version": "2.100.0"
                 }
               },
               "custom-resource-lambda": {
@@ -46,7 +46,7 @@
                         "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/ServiceRole/ImportServiceRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       },
                       "Resource": {
@@ -91,7 +91,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       },
                       "DefaultPolicy": {
@@ -127,19 +127,19 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                              "version": "2.57.0"
+                              "version": "2.100.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.Policy",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   },
                   "Code": {
@@ -151,7 +151,7 @@
                         "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/Code/Stage",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.AssetStaging",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       },
                       "AssetBucket": {
@@ -159,13 +159,13 @@
                         "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/custom-resource-lambda/Code/AssetBucket",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   },
                   "Resource": {
@@ -178,13 +178,7 @@
                           "s3Bucket": {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "s3Key": "be003ddd3ee30f84935bf00c7ea6a2c019a9a874837f74bf451d77f353cb0210.zip"
-                        },
-                        "role": {
-                          "Fn::GetAtt": [
-                            "AlarmWithTagsConstructcustomresourcelambdaServiceRole0D9569CD",
-                            "Arn"
-                          ]
+                          "s3Key": "0f39440ce486a91e12cf6920fb2f313a8a051f9af7faab45bd9655df5e9cf217.zip"
                         },
                         "description": "Create, Delete or Update alarm tags",
                         "environment": {
@@ -193,6 +187,12 @@
                           }
                         },
                         "handler": "index.handler",
+                        "role": {
+                          "Fn::GetAtt": [
+                            "AlarmWithTagsConstructcustomresourcelambdaServiceRole0D9569CD",
+                            "Arn"
+                          ]
+                        },
                         "runtime": "nodejs16.x",
                         "tags": [
                           {
@@ -205,13 +205,13 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
-                  "version": "2.57.0"
+                  "version": "2.100.0"
                 }
               },
               "alarm-tag-provider": {
@@ -231,7 +231,7 @@
                             "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/ServiceRole/ImportServiceRole",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.Resource",
-                              "version": "2.57.0"
+                              "version": "2.100.0"
                             }
                           },
                           "Resource": {
@@ -276,7 +276,7 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                              "version": "2.57.0"
+                              "version": "2.100.0"
                             }
                           },
                           "DefaultPolicy": {
@@ -330,19 +330,19 @@
                                 },
                                 "constructInfo": {
                                   "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                                  "version": "2.57.0"
+                                  "version": "2.100.0"
                                 }
                               }
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.Policy",
-                              "version": "2.57.0"
+                              "version": "2.100.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.Role",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       },
                       "Code": {
@@ -354,7 +354,7 @@
                             "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/Code/Stage",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.AssetStaging",
-                              "version": "2.57.0"
+                              "version": "2.100.0"
                             }
                           },
                           "AssetBucket": {
@@ -362,13 +362,13 @@
                             "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/Code/AssetBucket",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                              "version": "2.57.0"
+                              "version": "2.100.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       },
                       "Resource": {
@@ -381,13 +381,7 @@
                               "s3Bucket": {
                                 "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                               },
-                              "s3Key": "2157f4ab8972014e220d70707296b292b3b7301f163f7cd641ccda0ee663530f.zip"
-                            },
-                            "role": {
-                              "Fn::GetAtt": [
-                                "AlarmWithTagsConstructalarmtagproviderframeworkonEventServiceRole511DF4FE",
-                                "Arn"
-                              ]
+                              "s3Key": "7382a0addb9f34974a1ea6c6c9b063882af874828f366f5c93b2b7b64db15c94.zip"
                             },
                             "description": "AWS CDK resource provider framework - onEvent (IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider)",
                             "environment": {
@@ -401,7 +395,13 @@
                               }
                             },
                             "handler": "framework.onEvent",
-                            "runtime": "nodejs14.x",
+                            "role": {
+                              "Fn::GetAtt": [
+                                "AlarmWithTagsConstructalarmtagproviderframeworkonEventServiceRole511DF4FE",
+                                "Arn"
+                              ]
+                            },
+                            "runtime": "nodejs18.x",
                             "tags": [
                               {
                                 "key": "foo",
@@ -413,7 +413,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       },
                       "LogRetention": {
@@ -425,13 +425,13 @@
                             "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/LogRetention/Resource",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
-                              "version": "2.57.0"
+                              "version": "2.100.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_logs.LogRetention",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       },
                       "LogGroup": {
@@ -439,19 +439,19 @@
                         "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/alarm-tag-provider/framework-onEvent/LogGroup",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_lambda.Function",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.custom_resources.Provider",
-                  "version": "2.57.0"
+                  "version": "2.100.0"
                 }
               },
               "AlarmWithTagsConstruct": {
@@ -463,19 +463,19 @@
                     "path": "IntegrationTestStackForAlarmWithTags/AlarmWithTagsConstruct/AlarmWithTagsConstruct/Default",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CustomResource",
-                  "version": "2.57.0"
+                  "version": "2.100.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "aws-cdk-lib.aws_cloudwatch.Alarm",
-              "version": "2.57.0"
+              "version": "2.100.0"
             }
           },
           "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a": {
@@ -491,7 +491,7 @@
                     "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   },
                   "AssetBucket": {
@@ -499,13 +499,13 @@
                     "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
-                  "version": "2.57.0"
+                  "version": "2.100.0"
                 }
               },
               "ServiceRole": {
@@ -517,7 +517,7 @@
                     "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   },
                   "Resource": {
@@ -556,7 +556,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   },
                   "DefaultPolicy": {
@@ -592,19 +592,19 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_iam.Policy",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_iam.Role",
-                  "version": "2.57.0"
+                  "version": "2.100.0"
                 }
               },
               "Resource": {
@@ -612,7 +612,7 @@
                 "path": "IntegrationTestStackForAlarmWithTags/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
-                  "version": "2.57.0"
+                  "version": "2.100.0"
                 }
               }
             },
@@ -626,7 +626,7 @@
             "path": "IntegrationTestStackForAlarmWithTags/BootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
-              "version": "2.57.0"
+              "version": "2.100.0"
             }
           },
           "CheckBootstrapVersion": {
@@ -634,13 +634,13 @@
             "path": "IntegrationTestStackForAlarmWithTags/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
-              "version": "2.57.0"
+              "version": "2.100.0"
             }
           }
         },
         "constructInfo": {
           "fqn": "aws-cdk-lib.Stack",
-          "version": "2.57.0"
+          "version": "2.100.0"
         }
       },
       "TestAlarmTags": {
@@ -663,17 +663,17 @@
                 "id": "DeployAssert",
                 "path": "TestAlarmTags/DefaultTest/DeployAssert",
                 "children": {
-                  "AwsApiCallCloudWatchlistTagsForResource": {
-                    "id": "AwsApiCallCloudWatchlistTagsForResource",
-                    "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource",
+                  "AwsApiCallCloudWatchlistTagsForResource443391a3a48ea65627d8bf119ee3b19e": {
+                    "id": "AwsApiCallCloudWatchlistTagsForResource443391a3a48ea65627d8bf119ee3b19e",
+                    "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource443391a3a48ea65627d8bf119ee3b19e",
                     "children": {
                       "SdkProvider": {
                         "id": "SdkProvider",
-                        "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/SdkProvider",
+                        "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource443391a3a48ea65627d8bf119ee3b19e/SdkProvider",
                         "children": {
                           "AssertionsProvider": {
                             "id": "AssertionsProvider",
-                            "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/SdkProvider/AssertionsProvider",
+                            "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource443391a3a48ea65627d8bf119ee3b19e/SdkProvider/AssertionsProvider",
                             "constructInfo": {
                               "fqn": "constructs.Construct",
                               "version": "10.0.5"
@@ -682,39 +682,39 @@
                         },
                         "constructInfo": {
                           "fqn": "@aws-cdk/integ-tests-alpha.AssertionsProvider",
-                          "version": "2.57.0-alpha.0"
+                          "version": "2.100.0-alpha.0"
                         }
                       },
                       "Default": {
                         "id": "Default",
-                        "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/Default",
+                        "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource443391a3a48ea65627d8bf119ee3b19e/Default",
                         "children": {
                           "Default": {
                             "id": "Default",
-                            "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/Default/Default",
+                            "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource443391a3a48ea65627d8bf119ee3b19e/Default/Default",
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.CfnResource",
-                              "version": "2.57.0"
+                              "version": "2.100.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CustomResource",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       },
                       "AssertionResults": {
                         "id": "AssertionResults",
-                        "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource/AssertionResults",
+                        "path": "TestAlarmTags/DefaultTest/DeployAssert/AwsApiCallCloudWatchlistTagsForResource443391a3a48ea65627d8bf119ee3b19e/AssertionResults",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnOutput",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/integ-tests-alpha.AwsApiCall",
-                      "version": "2.57.0-alpha.0"
+                      "version": "2.100.0-alpha.0"
                     }
                   },
                   "SingletonFunction1488541a7b23466481b69b4408076b81": {
@@ -726,7 +726,7 @@
                         "path": "TestAlarmTags/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Staging",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.AssetStaging",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       },
                       "Role": {
@@ -734,7 +734,7 @@
                         "path": "TestAlarmTags/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Role",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       },
                       "Handler": {
@@ -742,7 +742,7 @@
                         "path": "TestAlarmTags/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Handler",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
-                          "version": "2.57.0"
+                          "version": "2.100.0"
                         }
                       }
                     },
@@ -756,7 +756,7 @@
                     "path": "TestAlarmTags/DefaultTest/DeployAssert/BootstrapVersion",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnParameter",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   },
                   "CheckBootstrapVersion": {
@@ -764,25 +764,25 @@
                     "path": "TestAlarmTags/DefaultTest/DeployAssert/CheckBootstrapVersion",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnRule",
-                      "version": "2.57.0"
+                      "version": "2.100.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.Stack",
-                  "version": "2.57.0"
+                  "version": "2.100.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/integ-tests-alpha.IntegTestCase",
-              "version": "2.57.0-alpha.0"
+              "version": "2.100.0-alpha.0"
             }
           }
         },
         "constructInfo": {
           "fqn": "@aws-cdk/integ-tests-alpha.IntegTest",
-          "version": "2.57.0-alpha.0"
+          "version": "2.100.0-alpha.0"
         }
       },
       "Tree": {
@@ -796,7 +796,7 @@
     },
     "constructInfo": {
       "fqn": "aws-cdk-lib.App",
-      "version": "2.57.0"
+      "version": "2.100.0"
     }
   }
 }
