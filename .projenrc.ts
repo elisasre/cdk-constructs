@@ -81,7 +81,7 @@ project.buildWorkflow?.addPostBuildJob('integrationtest', {
     },
     {
       name: 'Configure AWS credentials',
-      uses: 'aws-actions/configure-aws-credentials@v1',
+      uses: 'aws-actions/configure-aws-credentials@v4',
       with: {
         'role-to-assume': 'arn:aws:iam::762212084818:role/cdk-constructs-test-role',
         'role-session-name': 'cdk-constructs-test',
