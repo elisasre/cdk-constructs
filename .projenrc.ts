@@ -107,7 +107,8 @@ project.buildWorkflow?.addPostBuildJob('automerge', {
       name: 'Automerge dependabot PR',
       uses: 'elisa-actions/github-action-merge-dependabot@v3',
       with: {
-        target: 'minor',
+        'target': 'minor',
+        'github-token': '${{ secrets.DOPS_SRE_PAT }}',
       },
     },
   ],
