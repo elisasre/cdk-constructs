@@ -2,8 +2,6 @@
 
 ## Usage
 
-Create a Github token that has read access to packages and add it to your .npmrc, in CI you'll naturally need a token for packages.
-
 Add @elisasre/cdk-constructs as a dependency of your CDK project and import the desired construct.
 
 ## Alarm with tags
