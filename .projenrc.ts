@@ -56,6 +56,9 @@ project.addTask('integrationtest', {
 });
 
 project.buildWorkflow?.addPostBuildJob('integrationtest', {
+  concurrency: {
+    group: 'integrationtest',
+  },
   tools: {
     node: {
       version: nodejsVersion,
@@ -94,6 +97,7 @@ project.buildWorkflow?.addPostBuildJob('integrationtest', {
     },
   ],
 });
+
 
 project.buildWorkflow?.addPostBuildJob('automerge', {
   needs: ['integrationtest'],
