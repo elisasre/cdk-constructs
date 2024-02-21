@@ -2,7 +2,7 @@ import { awscdk, javascript, TaskStep, TextFile } from 'projen';
 import { GithubCredentials } from 'projen/lib/github';
 import { JobPermission } from 'projen/lib/github/workflows-model';
 
-const nodejsVersion = '18';
+const nodejsVersion = 'v20';
 
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Elisa SRE',

@@ -30,7 +30,6 @@ jspm_packages/
 .yarn-integrity
 .cache
 test/cdk-integ.out*
-!/.projenrc.js
 /test-reports/
 junit.xml
 /coverage/
@@ -40,7 +39,6 @@ junit.xml
 !/.github/workflows/release.yml
 !/.github/dependabot.yml
 !/.github/pull_request_template.md
-!/.npmrc
 !/test/
 !/tsconfig.dev.json
 !/src/
@@ -51,3 +49,4 @@ junit.xml
 tsconfig.json
 !/API.md
 !/.nvmrc
+!/.projenrc.ts

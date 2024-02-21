@@ -8,7 +8,6 @@
     ".github/workflows/pull-request-lint.yml",
     ".github/workflows/release.yml",
     ".gitignore",
-    ".npmrc",
     ".nvmrc",
     ".projen/deps.json",
     ".projen/files.json",
