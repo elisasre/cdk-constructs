@@ -16,7 +16,7 @@
      "ResourceARN": "\"arn:aws:cloudwatch:eu-central-1:762212084818:alarm:TestAlarmForIntegrationTests\""
     },
     "flattenResponse": "false",
-    "salt": "1696847642230"
+    "salt": "1708511530811"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -79,7 +79,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "f3de7fa69bbae9bbe9472b98f9b1b3626a9ee748b2fd5895278331be04efa56b.zip"
+     "S3Key": "d4f7205622555f2d0536878c2577ce0c2568fd87e9525862b64a30220dc725aa.zip"
     },
     "Timeout": 120,
     "Handler": "index.handler",

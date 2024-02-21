@@ -32,10 +32,10 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 
 // node_modules/cfn-response/index.js
 var require_cfn_response = __commonJS({
-  "node_modules/cfn-response/index.js"(exports) {
-    exports.SUCCESS = "SUCCESS";
-    exports.FAILED = "FAILED";
-    exports.send = function(event, context, responseStatus, responseData, physicalResourceId) {
+  "node_modules/cfn-response/index.js"(exports2) {
+    exports2.SUCCESS = "SUCCESS";
+    exports2.FAILED = "FAILED";
+    exports2.send = function(event, context, responseStatus, responseData, physicalResourceId) {
       var responseBody = JSON.stringify({
         Status: responseStatus,
         Reason: "See the details in CloudWatch Log Stream: " + context.logStreamName,
