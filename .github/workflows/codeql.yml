@@ -8,7 +8,7 @@ on:
     branches:
     - main
   schedule:
-    - cron: '35 4 * * 0'
+    - cron: '6 4 * * 0'
 
 jobs:
   analyze:
